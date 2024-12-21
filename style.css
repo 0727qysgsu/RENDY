@@ -1,0 +1,406 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #0d1b2a;
+    color: #e0e1dd;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Menambah padding untuk navbar */
+    background-color: #1b263b;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+/* Logo */
+.brand-logo {
+    font-size: 1.5rem;
+    color: #e0e1dd;
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo i {
+    margin-right: 8px; /* Memberikan jarak antara logo dan teks */
+}
+
+/* Navbar Menu */
+.navbar-menu {
+    display: flex;
+    gap: 20px; /* Memberikan jarak antar menu */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Toggler */
+.navbar-toggler {
+    display: none; /* Menyembunyikan toggle di desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #e0e1dd;
+    cursor: pointer;
+    position: absolute; /* Menempatkan tombol di posisi absolut */
+    right: 20px; /* Menjaga tombol di kanan */
+    top: 20px; /* Jarak atas tombol */
+}
+
+/* Responsif untuk Mobile */
+@media screen and (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Menyembunyikan menu navbar di mobile */
+        flex-direction: column; /* Menu ditata secara vertikal */
+        align-items: flex-start;
+        gap: 15px;
+        width: 100%;
+        background-color: #1b263b; /* Memberikan latar belakang pada menu */
+        position: absolute;
+        top: 60px; /* Posisi menu di bawah navbar */
+        left: 0;
+        padding: 20px; /* Menambahkan padding di menu */
+        z-index: 1000; /* Agar menu muncul di atas */
+    }
+
+    .navbar-menu.active {
+        display: flex; /* Menampilkan menu saat toggle aktif */
+    }
+
+    .navbar-toggler {
+        display: block; /* Menampilkan toggle button di mobile */
+    }
+
+    .navbar .container {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* Hover Efek */
+.navbar-menu li a {
+    color: #e0e1dd;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-menu li a:hover {
+    background-color: #4da8da;
+    color: #1b263b;
+}
+
+/*hero*/
+/* Section Hero */
+#hero {
+    display: flex;
+    justify-content: center;  /* Mengatur konten agar terpusat secara horizontal */
+    align-items: center;  /* Mengatur konten agar terpusat secara vertikal */
+    height: 100vh;  /* Membuat section hero mengisi seluruh tinggi layar */
+    text-align: center;  /* Mengatur teks agar terpusat */
+    background-color: #0d1b2a;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;  /* Mengatur isi konten dalam satu kolom */
+    align-items: center;  /* Mengatur konten dalam hero-content terpusat */
+    color: #e0e1dd;  /* Warna teks */
+}
+
+.hero-gif {
+    max-width: 100%;  /* Menyesuaikan ukuran gambar dengan lebar kontainer */
+    height: auto;  /* Menjaga proporsi gambar */
+    margin-bottom: 20px;  /* Memberikan jarak antara gif dan teks */
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #4da8da;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    max-width: 600px;  /* Membatasi lebar teks agar tidak terlalu lebar */
+    margin: 0 auto;  /* Menjaga jarak antara teks dan tepi kontainer */
+}
+
+/* Sections */
+.section {
+    padding: 60px 0;
+}
+
+.section h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #4da8da;
+    text-align: center;
+}
+
+.section p {
+    text-align: center;
+}
+
+/* Bagian Projects */
+#projects .projects-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.project-card {
+    flex: 1 1 30%; /* Mengatur agar card fleksibel, minimal 30% lebar */
+    background-color: #415a77; /* Mengubah warna latar belakang */
+    color: #e0e1dd; /* Mengubah warna teks */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #e0e1dd; /* Mengubah warna teks di dalam card */
+}
+
+/* Ikon */
+.project-card i {
+    font-size: 2rem;
+    margin: 5px;
+    color: #e0e1dd; /* Mengubah warna ikon */
+}
+
+/* Responsif untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%; /* Membuat card mengambil seluruh lebar layar di perangkat kecil */
+        margin-bottom: 20px;
+    }
+
+    .project-card p {
+        font-size: 0.9rem; /* Mengurangi ukuran font di perangkat kecil */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Menyesuaikan ukuran heading */
+    }
+
+    p {
+        font-size: 1rem; /* Menyesuaikan ukuran teks paragraf */
+    }
+}
+
+/* Responsif untuk layar ekstra kecil (handphone) */
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem; /* Mengurangi ukuran judul untuk layar sangat kecil */
+    }
+
+    p {
+        font-size: 0.9rem; /* Mengurangi ukuran teks paragraf */
+        word-wrap: break-word; /* Mencegah teks memanjang keluar */
+    }
+
+    .project-card i {
+        font-size: 1.5rem; /* Menyesuaikan ukuran ikon */
+    }
+}
+
+/* Skills */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-size: 1.1rem;
+}
+
+/* Styling untuk Setiap Skill */
+.skills-list li {
+    position: relative;
+    width: 100%;
+}
+
+/* Teks yang berada di atas bar */
+.skills-list li span {
+    display: block;
+    margin-bottom: 10px;  /* Jarak antara teks dan bar */
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Styling untuk bar skill */
+.skill-bar {
+    height: 20px; /* Memperbesar tinggi bar */
+    width: 0;  /* Memulai dengan lebar 0 */
+    background-color: #4da8da; /* Warna progress bar */
+    border-radius: 10px; /* Membuat bar lebih melengkung */
+    position: relative; /* Menjaga angka di dalam bar */
+    transition: width 2s ease-out; /* Animasi pengisian yang lebih smooth */
+}
+
+/* Menampilkan angka persen di dalam progress bar */
+.skill-percentage {
+    position: absolute;
+    top: 50%;  /* Menempatkan angka di tengah vertikal */
+    left: 50%;
+    transform: translate(-50%, -50%);  /* Menjaga angka tetap terpusat */
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;  /* Warna angka persen putih */
+}
+
+/* Menambahkan ikon di kiri bar */
+.skills-list li i {
+    font-size: 1.5rem; /* Ukuran ikon */
+    color: #fff; /* Warna ikon */
+    position: absolute;
+    left: 10px; /* Menempatkan ikon di kiri */
+    top: 50%;
+    transform: translateY(-50%); /* Menjaga ikon tetap terpusat secara vertikal */
+}
+
+/* Hover effect pada skill item */
+.skills-list li:hover {
+    transform: translateX(10px); /* Animasi geser saat hover */
+}
+
+.skills-list li:hover i {
+    color: #1b263b; /* Warna ikon saat hover */
+}
+
+/* Gallery */
+.gallery-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-item {
+    position: relative;
+    width: calc(50% - 10px); /* Ukuran gambar lebih kecil dan ada jarak antar gambar */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05); /* Efek zoom saat hover */
+}
+
+.gallery-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Latar belakang semi-transparan */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: none; /* Teks disembunyikan saat tidak hover */
+}
+
+.gallery-item:hover .gallery-text {
+    display: block; /* Teks muncul saat hover */
+}
+
+h1 {
+    text-align: center;
+    color: #e0e1dd;
+    margin-bottom: 30px;
+}
+
+/* Kontak */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 15px; /* Menambahkan padding agar form tidak menempel pada tepi */
+    box-sizing: border-box; /* Mengatur padding agar tidak mempengaruhi ukuran elemen */
+}
+
+.contact-form input, .contact-form textarea, .contact-form select {
+    width: 100%; /* Membuat form elemen menyesuaikan dengan lebar kontainer */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box; /* Agar padding tidak mempengaruhi ukuran elemen */
+    -webkit-appearance: none; /* Menghilangkan default styling di iOS */
+    -moz-appearance: none; /* Menghilangkan default styling di Firefox */
+    appearance: none; /* Menghilangkan default styling di browser lain */
+    background-color: white; /* Background putih agar dropdown lebih jelas */
+    text-overflow: ellipsis; /* Menambahkan elipsis pada text yang terlalu panjang */
+}
+
+.contact-form select::-ms-expand {
+    display: none; /* Menghilangkan panah default di Internet Explorer */
+}
+
+/* Responsif untuk perangkat dengan lebar layar kecil */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 10px; /* Mengurangi padding pada layar kecil */
+    }
+
+    .contact-form input, .contact-form textarea, .contact-form select {
+        font-size: 0.9rem; /* Menyesuaikan ukuran font pada perangkat kecil */
+        padding: 8px; /* Menurunkan padding pada perangkat kecil */
+        width: 100%; /* Membuat select box menyesuaikan dengan lebar kontainer */
+    }
+
+    .contact-form button {
+        font-size: 1rem; /* Menyesuaikan ukuran font pada tombol di layar kecil */
+        padding: 8px 16px; /* Mengurangi padding tombol untuk perangkat kecil */
+    }
+}
+
+footer {
+    background-color: #1b263b;
+    color: #e0e1dd;
+    padding: 20px 0;
+    text-align: center;
+}
